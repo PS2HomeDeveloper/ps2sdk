@@ -153,7 +153,7 @@ int CreateBlankROMImg(const char *filename, ROMIMG *ROMImg)
 #if defined(_WIN32) || defined(WIN32)
 	GetUsername(UserName, sizeof(UserName));
 #else
-    getlogin_r(UserName, sizeof(UserName));
+    strncpy(UserName, "user", sizeof(UserName) - 1);
 #endif
 	GetLocalhostName(LocalhostName, sizeof(LocalhostName));
 	GetCurrentWorkingDirectory(cwd, sizeof(cwd));
